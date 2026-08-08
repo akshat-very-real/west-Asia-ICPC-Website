@@ -18,32 +18,15 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0F172A; /* Slate 900 */
-  color: #F8FAFC; /* Slate 50 */
+  background-color: #F8FAFC; /* Slate 50 */
+  color: #0F172A; /* Slate 900 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
 ::selection {
-  background-color: #312E81; /* Indigo 900 */
-  color: #E0E7FF; /* Indigo 100 */
+  background-color: #DBEAFE; /* Blue 100 */
+  color: #1E3A8A; /* Blue 900 */
 }
 
 /* Custom Scrollbar */
@@ -53,14 +36,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1E293B; /* Slate 800 */
+  background: #F1F5F9; /* Slate 100 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569; /* Slate 600 */
+  background: #CBD5E1; /* Slate 300 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748B; /* Slate 500 */
+  background: #94A3B8; /* Slate 400 */
 }

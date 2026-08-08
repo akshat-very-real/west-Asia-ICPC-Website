@@ -132,6 +132,12 @@ export default function MainContent() {
                 <th className={`${th} whitespace-nowrap min-w-[100px]`}>
                   Site
                 </th>
+                <th className={`${th} whitespace-nowrap min-w-[140px]`}>
+                  Registration Open
+                </th>
+                <th className={`${th} whitespace-nowrap min-w-[140px]`}>
+                  Online Contest Date
+                </th>
                 <th className={`${th} min-w-[150px]`}>Onsite Contest Date</th>
               </tr>
             </thead>
@@ -143,6 +149,8 @@ export default function MainContent() {
                 >
                   <td className={td}>{row.country}</td>
                   <td className={td}>{row.site}</td>
+                  <td className={td}>{row.regDate || 'TBA'}</td>
+                  <td className={td}>{row.onlineDate || 'TBA'}</td>
                   <td className={td}>{row.date}</td>
                 </tr>
               ))}
