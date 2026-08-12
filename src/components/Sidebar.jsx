@@ -113,16 +113,6 @@ export default function Sidebar() {
                   </div>
                 )}
               </div>
-              {link.isNew && (
-                <img
-                  alt="New!"
-                  loading="lazy"
-                  width="24"
-                  height="24"
-                  className="w-6 h-6 animate-bounce shrink-0"
-                  src="/new.gif"
-                />
-              )}
             </div>
           </a>
         ))}
