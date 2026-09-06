@@ -34,9 +34,9 @@ export const directors = [
   {
     country: 'India',
     site: 'Chennai',
-    director: 'Prof. Masilamani V.',
-    email: 'masila@iiitdm.ac.in',
-    website: 'https://icpc-iiitdm.vercel.app/',
+    director: 'Dr. John Deva Prasanna D S',
+    email: 'johndevd@srmist.edu.in',
+    website: 'https://icpcchennai.vercel.app/',
   },
   {
     country: 'India',
@@ -48,7 +48,7 @@ export const directors = [
   {
     country: 'India',
     site: 'Mathura',
-    director: 'Prof. Anoop Kumar Gupta',
+    director: 'Prof. Rohit Agarwal',
     email: 'rohit.agrwal@gla.ac.in',
     website: 'https://mathuraicpc.in/',
   },
@@ -267,7 +267,7 @@ export const steeringCommittee = [
     name: "Dr. John Deva Prasanna D S",
     affiliation: "SRM Institute of Science and Technology Chennai, India",
     email: "johndevd@srmist.edu.in",
-    url: "https://srmist.edu.in/icpc",
+    url: "https://icpcchennai.vercel.app/",
   },
   {
     name: "Prof. Mohammad Shah Omid",
