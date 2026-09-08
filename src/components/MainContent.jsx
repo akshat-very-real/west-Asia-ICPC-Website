@@ -55,7 +55,7 @@ export default function MainContent() {
             Rounds of all the sites in Asia West Region. Top few teams from all
             the regional sites of Asia West region (i.e.{" "}
             <span className="italic">
-              Amritapuri, Chennai, Dhaka, Kabul, Kanpur, Tehran
+              Amritapuri, Chennai, Dhaka, Kabul, Kanpur, Mathura, Peradeniya, Tehran
             </span>{" "}
             and <span className="italic">Topi</span>) are eligible to
             participate in this contest. This contest will be held on{" "}
@@ -78,13 +78,13 @@ export default function MainContent() {
                 <th className={`${th} whitespace-nowrap min-w-[80px]`}>
                   Country
                 </th>
-                <th className={`${th} whitespace-nowrap min-w-[100px]`}>
-                  Site
+                <th className={`${th} whitespace-nowrap min-w-[140px]`}>
+                  Site &amp; Host
                 </th>
                 <th className={`${th} min-w-[200px]`}>
                   Regional Contest Director
                 </th>
-                <th className={`${th} min-w-[150px]`}>Email</th>
+                <th className={`${th} min-w-[180px]`}>Email</th>
                 <th className={`${th} whitespace-nowrap min-w-[100px]`}>
                   Actions
                 </th>
@@ -97,9 +97,37 @@ export default function MainContent() {
                   className="hover:bg-amber-50/50 transition-colors"
                 >
                   <td className={td}>{row.country}</td>
-                  <td className={td}>{row.site}</td>
+                  <td className={td}>
+                    <div className="font-bold text-slate-900">{row.site}</div>
+                    {row.institution && (
+                      <div className="text-xs text-slate-500 font-normal mt-0.5 max-w-xs leading-snug">
+                        {row.institution}
+                      </div>
+                    )}
+                  </td>
                   <td className={td}>{row.director}</td>
-                  <td className={td}>{row.email}</td>
+                  <td className={td}>
+                    {row.email.includes(',') ? (
+                      <div className="space-y-1">
+                        {row.email.split(',').map((em, i) => (
+                          <a
+                            key={i}
+                            href={`mailto:${em.trim()}`}
+                            className="block text-indigo-600 hover:underline text-xs sm:text-sm font-medium"
+                          >
+                            {em.trim()}
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <a
+                        href={`mailto:${row.email}`}
+                        className="text-indigo-600 hover:underline text-xs sm:text-sm font-medium"
+                      >
+                        {row.email}
+                      </a>
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-xs sm:text-sm border-b border-amber-100">
                     <a
                       href={row.website}
@@ -123,22 +151,25 @@ export default function MainContent() {
           Important Dates
         </h2>
         <div className="bg-white border border-amber-200 rounded-xl shadow-md overflow-hidden overflow-x-auto mb-6">
-          <table className="w-full min-w-[600px] border-collapse bg-white">
+          <table className="w-full min-w-[750px] border-collapse bg-white">
             <thead>
               <tr>
-                <th className={`${th} whitespace-nowrap min-w-[100px]`}>
+                <th className={`${th} whitespace-nowrap min-w-[90px]`}>
                   Country
                 </th>
                 <th className={`${th} whitespace-nowrap min-w-[100px]`}>
                   Site
                 </th>
-                <th className={`${th} whitespace-nowrap min-w-[140px]`}>
+                <th className={`${th} min-w-[180px]`}>
+                  Mode of Contest
+                </th>
+                <th className={`${th} whitespace-nowrap min-w-[130px]`}>
                   Registration Open
                 </th>
                 <th className={`${th} whitespace-nowrap min-w-[140px]`}>
                   Online Contest Date
                 </th>
-                <th className={`${th} min-w-[150px]`}>Onsite Contest Date</th>
+                <th className={`${th} min-w-[160px]`}>Contest / Onsite Date</th>
               </tr>
             </thead>
             <tbody>
@@ -149,9 +180,20 @@ export default function MainContent() {
                 >
                   <td className={td}>{row.country}</td>
                   <td className={td}>{row.site}</td>
+                  <td className={td}>
+                    <span
+                      className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                        row.mode?.includes('Online')
+                          ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                          : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                      }`}
+                    >
+                      {row.mode || 'Onsite Contest'}
+                    </span>
+                  </td>
                   <td className={td}>{row.regDate || 'TBA'}</td>
                   <td className={td}>{row.onlineDate || 'TBA'}</td>
-                  <td className={td}>{row.date}</td>
+                  <td className={`${td} font-bold text-slate-900`}>{row.date}</td>
                 </tr>
               ))}
             </tbody>

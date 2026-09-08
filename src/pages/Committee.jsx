@@ -61,21 +61,21 @@ export default function Committee() {
                             <div className="text-blue-600">
                               E-mail:{" "}
                               <a
-                                href="mailto:iitkmailsofpg@gmail.com"
+                                href="mailto:pg@gla.ac.in"
                                 className="underline"
                               >
-                                iitkmailsofpg@gmail.com
+                                pg@gla.ac.in
                               </a>
                             </div>
                             <div className="text-blue-600">
                               URL:{" "}
                               <a
-                                href="URL: //wc.indiaicpc.in/"
+                                href="https://wc.indiaicpc.in/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline"
                               >
-                                URL: //wc.indiaicpc.in/
+                                https://wc.indiaicpc.in/
                               </a>
                             </div>
                           </div>
